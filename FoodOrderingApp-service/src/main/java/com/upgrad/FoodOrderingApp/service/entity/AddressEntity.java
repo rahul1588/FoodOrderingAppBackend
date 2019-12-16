@@ -188,5 +188,4 @@ public class AddressEntity implements Serializable {
     public void setCustomer(CustomerEntity customer) {
         this.customer = customer;
     }
-
 }
