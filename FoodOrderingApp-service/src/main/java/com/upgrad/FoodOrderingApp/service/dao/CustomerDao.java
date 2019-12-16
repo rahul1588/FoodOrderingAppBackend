@@ -25,6 +25,14 @@ public class CustomerDao {
         }
     }
 
+    public CustomerEntity getCustomerByUUID(String uuid) {
+        try {
+            return entityManager.createNamedQuery("customerByUUID", CustomerEntity.class).setParameter("uuid", uuid).getSingleResult();
+        } catch (NoResultException nre) {
+            return null;
+        }
+    }
+
     public CustomerEntity findByContactNumber(String contactNumber) {
         try {
             CustomerEntity customer = entityManager.createNamedQuery("customerByContactNumber", CustomerEntity.class)
